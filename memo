@@ -1,0 +1,40 @@
+・dirの英語化
+	~/.config/user-dirs.dirs を英語に
+	homeの日本語dirを英語に
+
+・epel(パッケージ管理拡張)
+	dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rp
+
+・remi(パッケージ管理拡張)
+	dnf install http://rpms.famillecollet.com/enterprise/remi-release-8.rpm
+
+・mozc(高度な日本語変換)
+	dnf install ibus-mozc -y
+	再起動
+
+・chrome
+	https://www.google.com/intl/ja_jp/chrome/
+	dnf localinstall google-chrome-stable_current_x86_64.rpm
+
+・Thunderbird
+	dnf install thunderbird
+
+・terminator
+	dnf install terminator
+	キーバインド設定
+
+・vimx(clipbord有)
+	dnf install vim-X11
+	.bashrc に alias vimi="vimx"
+
+・tig
+	dnf install tig
+
+・tex
+	#https://www.tug.org/texlive/
+	#Quick install for Unix
+	#various ways to acquire the software
+	#Installing TeX Live over the Internet
+	#install-tl-unx.tar.gz
+	tar xvf install-tl-unx.tar.gz
+	sudo ./install-tl
