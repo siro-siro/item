@@ -1,0 +1,63 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{beamer}           % pdfTeX の場合
+% 付録をページ数にカウントしない NPC
+\usepackage[orientation=portrait,size=a0,scale=1.5]{beamerposter}% whole 指定
+\setbeamertemplate{navigation symbols}{} % ナビゲーションを消す
+\usefonttheme{professionalfonts} % 数式のフォントをかっこよくする
+
+\usepackage[whole]{bxcjkjatype}% whole 指定
+\usepackage{algorithm}
+\usepackage{tcolorbox}
+\usepackage{algorithmic}
+%\usepackage{theorem}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{bbm}
+%\usepackage[dvipdfmx]{graphicx}
+\usepackage{graphicx}
+\usepackage{overpic}
+\usepackage[absolute,overlay]{textpos}
+%\setbeamertemplate{background}[grid][step=30pt]
+
+\newcommand{\bhrule}{{\color{blue} \hrule}}
+
+\definecolor{nico}{rgb}{1, 0.90, 0.96}
+\definecolor{orange}{rgb}{0.95, 0.3, 0.0}
+\definecolor{ash}{rgb}{0.8,0.8,0.8}
+\definecolor{myblue}{rgb}{0.2,0.2,0.7}
+\setbeamercolor{mine}{fg=white,bg=blue!70!cyan}
+\renewcommand{\alert}[1]{{\color{orange} {#1} }}
+\renewcommand{\structure}[1]{{\color{blue!50!cyan} {#1} }}
+\tcbset{colframe=myblue,colback=white,boxsep=16px} % textcolorbox settings
+
+\title{hogehoge}
+\author{白川　稜}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamercolor{myframetitle}{fg=white,bg=myblue}
+
+\begin{document}
+~ \\
+\vspace{10pt}
+\begin{beamercolorbox}[
+    wd=\textwidth,
+    sep=32pt,     % パディング 2pt
+]{myframetitle}
+\begin{center}
+	{\huge \inserttitle} \\
+	\medskip
+	\medskip
+	{\Large \insertauthor} \\
+\end{center}
+\end{beamercolorbox}
+
+\begin{columns}[T]
+	\begin{column}{0.50\textwidth}
+		\input{content.tex}
+	\end{column}
+	\begin{column}{0.50\textwidth}
+	\end{column}
+\end{columns}
+
+\end{document}
