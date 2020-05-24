@@ -3,7 +3,7 @@
 	homeの日本語dirを英語に
 
 ・epel(パッケージ管理拡張)
-	dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rp
+	dnf install epel-release
 
 ・remi(パッケージ管理拡張)
 	dnf install http://rpms.famillecollet.com/enterprise/remi-release-8.rpm
