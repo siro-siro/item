@@ -12,13 +12,6 @@
 	dnf install ibus-mozc -y
 	再起動
 
-・chrome
-	# https://www.google.com/intl/ja_jp/chrome/
-	dnf localinstall google-chrome-stable_current_x86_64.rpm
-
-・Thunderbird
-	dnf install thunderbird
-
 ・terminator
 	dnf install terminator
 	キーバインド設定
@@ -29,6 +22,20 @@
 
 ・tig
 	dnf install tig
+
+・chrome
+	# https://www.google.com/intl/ja_jp/chrome/
+	dnf localinstall google-chrome-stable_current_x86_64.rpm
+	vimium 拡張
+
+・Thunderbird
+	dnf install thunderbird
+
+・discord
+	dnf install snapd
+	systemctl enable --now snapd.socket
+	ln -s /var/lib/snapd/snap /snap
+	snap install discord	
 
 ・tex
 	# https://www.tug.org/texlive/
