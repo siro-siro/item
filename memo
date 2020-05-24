@@ -13,7 +13,7 @@
 	再起動
 
 ・chrome
-	https://www.google.com/intl/ja_jp/chrome/
+	# https://www.google.com/intl/ja_jp/chrome/
 	dnf localinstall google-chrome-stable_current_x86_64.rpm
 
 ・Thunderbird
@@ -31,10 +31,10 @@
 	dnf install tig
 
 ・tex
-	#https://www.tug.org/texlive/
-	#Quick install for Unix
-	#various ways to acquire the software
-	#Installing TeX Live over the Internet
-	#install-tl-unx.tar.gz
+	# https://www.tug.org/texlive/
+	# Quick install for Unix
+	# various ways to acquire the software
+	# Installing TeX Live over the Internet
+	# install-tl-unx.tar.gz
 	tar xvf install-tl-unx.tar.gz
 	sudo ./install-tl
