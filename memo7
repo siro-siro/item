@@ -1,0 +1,47 @@
+・dirの英語化
+	~/.config/user-dirs.dirs を英語に
+	homeの日本語dirを英語に
+
+・epel(パッケージ管理拡張)
+	yum install epel-release
+
+・remi(パッケージ管理拡張)
+	yum install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+
+・mozc(高度な日本語変換)
+	yum install ibus-mozc -y
+	再起動
+
+・terminator
+	yum install terminator
+	キーバインド設定
+
+・vimx(clipbord有)
+	yum install vim-X11
+	.bashrc に alias vimi="vimx"
+
+・tig
+	yum install tig
+
+・chrome
+	# https://www.google.com/intl/ja_jp/chrome/
+	yum localinstall google-chrome-stable_current_x86_64.rpm
+	vimium 拡張
+
+・Thunderbird
+	yum install thunderbird
+
+・discord
+	yum install snapd
+	systemctl enable --now snapd.socket
+	ln -s /var/lib/snapd/snap /snap
+	snap install discord	
+
+・tex
+	# https://www.tug.org/texlive/
+	# Quick install for Unix
+	# various ways to acquire the software
+	# Installing TeX Live over the Internet
+	# install-tl-unx.tar.gz
+	tar xvf install-tl-unx.tar.gz
+	sudo ./install-tl
