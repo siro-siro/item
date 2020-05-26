@@ -8,12 +8,22 @@ fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
-# User specific aliases and functions
+# User specific environment and startup programs
+export PATH=$HOME/.local/bin:$PATH
+
+export PYENV_ROOT="${HOME}/.pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init -)"
+fi
+
+export PS1="\[\e[38;5;44m\][\u@\h \W]$ \[\e[m\]"
 
 # xmodmap ~/.Xmodmap
-source ~/.once_bashrc
-echo > ~/.once_bashrc
+# source ~/.once_bashrc
+# echo > ~/.once_bashrc
 
+# User specific aliases and functions
 alias ls="ls --color=auto"
 alias la="ls -a"
 alias rm="sh ~/.local/sh/trash_rm.sh"

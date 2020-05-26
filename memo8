@@ -45,3 +45,24 @@
 	# install-tl-unx.tar.gz
 	tar xvf install-tl-unx.tar.gz
 	sudo ./install-tl
+
+・pyenv
+	dnf install gcc zlib-devel bzip2 bzip2-devel readline readline-devel sqlite sqlite-devel openssl openssl-devel git libffi-devel
+	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+・jupyter
+	pip install jupyter
+	pip install jupyterthemes
+	jt -t chesterish -T -f roboto -fs 9 -tf merriserif -tfs 11 -nf ptsans -nfs 11 -dfs 8 -ofs 8
+	pip install jupyter_contrib_NbExtensions
+	jupyter contrib nbextension install --user
+    # ~/.jupyter/custom/custom.css
+    # div.cell.edit_mode { の直前に以下を挿入
+		/* Jupyter cell is in normal mode when code mirror */
+		.edit_mode .cell.selected .CodeMirror-focused.cm-fat-cursor {
+		background-color: #000000 !important;
+		}
+		/* Jupyter cell is in insert mode when code mirror */
+		.edit_mode .cell.selected .CodeMirror-focused:not(.cm-fat-cursor) {
+		background-color: #000000 !important;
+		}

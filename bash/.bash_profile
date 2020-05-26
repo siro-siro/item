@@ -5,7 +5,7 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-cp ~/.once_bashrc_source ~/.once_bashrc
+# cp ~/.once_bashrc_source ~/.once_bashrc
 
 # User specific environment and startup programs
 

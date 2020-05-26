@@ -23,7 +23,7 @@ filetype plugin indent on
 syntax on
 
 set hlsearch
-hi Search ctermfg=0 ctermbg=11 guifg=Brack guibg=Yellow
+hi Search ctermfg=0 ctermbg=11 guibg=Yellow
 hi Pmenu ctermbg=255 
 hi PmenuSel ctermbg=22 ctermfg=white
 
