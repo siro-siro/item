@@ -1,0 +1,5 @@
+partial hidden modifier_keys
+xkb_symbols "keymap" {
+    key <HENK> { [ Escape ] };              // 変換をEscに変更
+    key <MUHE> { [ BackSpace ] };           // 無変換をバックスペースに変更
+};
