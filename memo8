@@ -23,6 +23,17 @@
 ・tig
 	dnf install tig
 
+・bootメニュー
+	-待機時間
+		# /etc/default/grub
+		GRUB_TIMEOUT=60
+		sudo cp /boot/efi/EFI/centos/grub.cfg /boot/efi/EFI/centos/grub.cfg.org
+		sudo grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
+	-アップデート後のカーネル削除
+		uname -a #現カーネルのバージョン確認
+		rpm -q kernel #カーネル履歴
+		sudo dnf remove --oldinstallonly #過去バージョン削除
+
 ・chrome
 	# https://www.google.com/intl/ja_jp/chrome/
 	dnf localinstall google-chrome-stable_current_x86_64.rpm
@@ -36,6 +47,11 @@
 	systemctl enable --now snapd.socket
 	ln -s /var/lib/snapd/snap /snap
 	snap install discord	
+	snap remove discord
+
+・zoom
+	wget https://zoom.us/client/latest/zoom_x86_64.rpm
+	sudo dnf -y localinstall zoom_x86_64.rpm
 
 ・tex
 	# https://www.tug.org/texlive/
@@ -45,6 +61,11 @@
 	# install-tl-unx.tar.gz
 	tar xvf install-tl-unx.tar.gz
 	sudo ./install-tl
+	sudo /usr/local/texlive/????/bin/*/tlmgr path add
+	sudo tlmgr update --self --all
+	# package追加
+	kpsewhich bm.sty の場所に.styファイルを追加
+	sudo mktexlsr
 
 ・github ssh
 	mkdir .ssh
