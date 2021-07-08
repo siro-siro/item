@@ -55,6 +55,11 @@
 		*エンター３回
 	# https://github.com/settings/ssh
 	# title: hoge, key:鍵の中身
+	# ~/.ssh/config
+		Host github github.com
+  		HostName github.com
+  		User git
+  		IdentityFile ~/.ssh/id_rsa
 	ssh -T git@github.com
 
 ・tig
