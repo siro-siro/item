@@ -1,0 +1,96 @@
+・apt
+	apt update
+	apt upgrade
+
+・terminator
+	apt install terminator
+	キーバインド設定
+
+・vim(clipbord有)
+	apt install vim-gtk3
+	# .vimrc
+		set clipboard=unnamedplus
+	vim --version
+
+・dirの英語化
+	# ~/.config/user-dirs.dirs
+		XDG_DESKTOP_DIR="$HOME/desktop"
+		XDG_DOWNLOAD_DIR="$HOME/download"
+		XDG_TEMPLATES_DIR="$HOME/templates"
+		XDG_PUBLICSHARE_DIR="$HOME/publicshare"
+		XDG_DOCUMENTS_DIR="$HOME/documents"
+		XDG_MUSIC_DIR="$HOME/music"
+		XDG_PICTURES_DIR="$HOME/pictures"
+		XDG_VIDEOS_DIR="$HOME/videos"
+
+	homeの日本語dirを英語に
+
+・bootメニュー
+	-待機時間
+		# /etc/default/grub
+		GRUB_TIMEOUT=60
+		sudo cp /boot/efi/EFI/ubuntu/grub.cfg /boot/efi/EFI/ubuntu/grub.cfg.org
+		sudo grub-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg
+	-アップデート後のカーネル削除
+		uname -a #現カーネルのバージョン確認
+		rpm -q kernel #カーネル履歴
+		sudo apt remove --oldinstallonly #過去バージョン削除
+
+・chrome
+	# https://www.google.com/intl/ja_jp/chrome/
+	apt install ./google-chrome-stable_current_amd64.deb
+	vimium 拡張
+	
+・discord
+	snap install discord	
+	snap remove discord
+
+・zoom
+	wget https://zoom.us/client/latest/zoom_amd64.deb
+	sudo apt install ./zoom_amd64.deb
+
+・github ssh
+	mkdir .ssh
+	ssh-keygen -t rsa
+		*エンター３回
+	# https://github.com/settings/ssh
+	# title: hoge, key:鍵の中身
+	ssh -T git@github.com
+
+・tig
+	dnf install tig
+
+・pyenv
+	apt install -y build-essential libffi-dev libssl-dev python3-dev git
+	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+・jupyter
+	pip install jupyter
+	pip install jupyter_contrib_NbExtensions
+	jupyter contrib nbextension install --user
+	pip install jupyterthemes
+	jt -t chesterish -T -f roboto -fs 9 -tf merriserif -tfs 11 -nf ptsans -nfs 11 -dfs 8 -ofs 8
+	# ~/.jupyter/custom/custom.css
+	# div.cell.edit_mode { の直前に以下を挿入
+		/* Jupyter cell is in normal mode when code mirror */
+		.edit_mode .cell.selected .CodeMirror-focused.cm-fat-cursor {
+		 background-color: #000000 !important;
+		}
+		/* Jupyter cell is in insert mode when code mirror */
+		.edit_mode .cell.selected .CodeMirror-focused:not(.cm-fat-cursor) {
+		 background-color: #000000 !important;
+		}
+
+・tex
+	# https://www.tug.org/texlive/
+	# Quick install for Unix
+	# various ways to acquire the software
+	# Installing TeX Live over the Internet
+	# install-tl-unx.tar.gz
+	tar xvf install-tl-unx.tar.gz
+	sudo ./install-tl
+	sudo /usr/local/texlive/????/bin/*/tlmgr path add
+	sudo tlmgr update --self --all
+	# package追加
+	kpsewhich bm.sty の場所に.styファイルを追加
+	sudo mktexlsr

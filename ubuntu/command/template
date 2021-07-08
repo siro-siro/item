@@ -1,0 +1,23 @@
+if [ $1 = "c++" ]; then
+	cp -r ~/templates/c++/* .
+fi
+
+if [ $1 = "project" ]; then
+	cp -r ~/templates/project/* .
+fi
+
+if [ $1 = "procon" ]; then
+	cp -r ~/templates/procon/* .
+fi
+
+if [ $1 = "pdflatex" ]; then
+	cp -r ~/templates/pdflatex/* .
+fi
+
+if [ $1 = "platex" ]; then
+	cp -r ~/templates/platex/* .
+fi
+
+if [ $1 = "beamer" ]; then
+	cp -r ~/templates/beamer/* .
+fi
