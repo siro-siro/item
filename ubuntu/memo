@@ -1,13 +1,13 @@
 ・apt
-	apt update
-	apt upgrade
+	sudo apt update
+	sudo apt upgrade
 
 ・terminator
-	apt install terminator
+	sudo apt install terminator
 	キーバインド設定
 
 ・vim(clipbord有)
-	apt install vim-gtk3
+	sudo apt install vim-gtk3
 	# .vimrc
 		set clipboard=unnamedplus
 	vim --version
@@ -29,6 +29,7 @@
 	-待機時間
 		# /etc/default/grub
 		GRUB_TIMEOUT=60
+		GRUB_DISABLE_MEMTEST=true
 		sudo cp /boot/efi/EFI/ubuntu/grub.cfg /boot/efi/EFI/ubuntu/grub.cfg.org
 		sudo grub-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg
 	-アップデート後のカーネル削除
@@ -37,8 +38,13 @@
 		sudo apt remove --oldinstallonly #過去バージョン削除
 
 ・chrome
-	# https://www.google.com/intl/ja_jp/chrome/
-	apt install ./google-chrome-stable_current_amd64.deb
+	-GUI
+		sudo apt install gdebi
+		https://www.google.com/intl/ja_jp/chrome/ からダウンロード
+		.debファイルを右クリック
+	-CUI
+		wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+		sudo apt install ./google-chrome-stable_current_amd64.deb
 	vimium 拡張
 	
 ・discord
@@ -63,11 +69,35 @@
 	ssh -T git@github.com
 
 ・tig
-	dnf install tig
+	apt install tig
 
 ・pyenv
-	apt install -y build-essential libffi-dev libssl-dev python3-dev git
+	sudo apt install -y build-essential libffi-dev libssl-dev python3-dev git
 	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+	source .profile
+	source .bashrc
+	sudo apt install python-is-python3
+
+・tmux
+	hogehoge
+
+・mendeley
+	# python2系をpyenvで用意
+	sudo apt install 2to3
+	https://github.com/JezaChen/MendeleyDesktop-For-Ubuntu-22.04/releases
+	https://packages.ubuntu.com/jammy/amd64/libldap-2.5-0/download
+	mv ~/download
+	wget http://ftp.de.debian.org/debian/pool/main/g/gconf/gconf2-common_3.2.6-8_all.deb 
+	wget http://ftp.de.debian.org/debian/pool/main/g/gconf/libgconf-2-4_3.2.6-8_amd64.deb
+	wget http://ftp.de.debian.org/debian/pool/main/g/gconf/gconf2_3.2.6-8_amd64.deb
+	wget http://ftp.de.debian.org/debian/pool/main/g/gconf/gconf-service_3.2.6-8_amd64.deb
+	sudo dpkg -i libldap-2.5-0_2.5.16+dfsg-0ubuntu0.22.04.2_amd64.deb
+	sudo dpkg -i gconf2-common_3.2.6-8_all.deb
+	sudo dpkg -i libgconf-2-4_3.2.6-8_amd64.deb
+	sudo dpkg -i gconf-service_3.2.6-8_amd64.deb
+	sudo dpkg -i gconf2_3.2.6-8_amd64.deb
+	sudo dpkg -i mendeleydesktop_1.19.8_for_ubuntu_22.04.deb
+	rm *.deb
 
 ・jupyter
 	pip install jupyter
