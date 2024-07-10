@@ -12,3 +12,5 @@ fi
 export PATH=$HOME/.local/bin:$PATH
 
 eval "$(pyenv init --path)"
+
+tmux source ~/.tmux_conf

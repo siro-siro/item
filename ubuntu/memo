@@ -79,7 +79,8 @@
 	sudo apt install python-is-python3
 
 ・tmux
-	hogehoge
+	sudo apt install tmux
+	sudo apt install xsel
 
 ・mendeley
 	# python2系をpyenvで用意
