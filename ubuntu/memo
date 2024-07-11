@@ -48,8 +48,14 @@
 	vimium 拡張
 	
 ・discord
-	snap install discord	
-	snap remove discord
+	-install
+		snap install discord
+		snap remove discord
+	-画面共有
+		echo $XDG_SESSION_TYPE
+		# if wayland
+			sudo vim /etc/gdm3/custom.conf
+			WaylandEnable=false
 
 ・zoom
 	wget https://zoom.us/client/latest/zoom_amd64.deb
