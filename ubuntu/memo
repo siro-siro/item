@@ -110,8 +110,8 @@
 
 ・jupyter lab
 	sudo apt install libsqlite3-dev libreadline-dev libbz2-dev libssl-dev libsqlite3-dev libncurses-dev libffi-dev libdb-dev libexpat1-dev zlib1g-dev liblzma-dev libgdbm-dev
-	pip install jupyterlab
-	pip install jupyterlab-vim
+	pip install jupyterlab==4.0.12
+	pip install jupyterlab-vim==4.1.0
 	# jupyter lab が起動しない場合pythonを入れ直す
 	# setting Theme, Enable Vim Mode, vimium
 	# setting Setting Editor 
