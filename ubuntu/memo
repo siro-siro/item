@@ -26,32 +26,31 @@
 	homeの日本語dirを英語に
 
 ・bootメニュー
-	-待機時間
+	# 待機時間
 		# /etc/default/grub
-		GRUB_TIMEOUT=60
-		GRUB_DISABLE_MEMTEST=true
-		sudo cp /boot/efi/EFI/ubuntu/grub.cfg /boot/efi/EFI/ubuntu/grub.cfg.org
-		sudo grub-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg
-	-アップデート後のカーネル削除
+			GRUB_TIMEOUT=60
+			GRUB_DISABLE_MEMTEST=true
+			sudo cp /boot/efi/EFI/ubuntu/grub.cfg /boot/efi/EFI/ubuntu/grub.cfg.org
+			sudo grub-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg
+	# アップデート後のカーネル削除
 		uname -a #現カーネルのバージョン確認
 		rpm -q kernel #カーネル履歴
 		sudo apt remove --oldinstallonly #過去バージョン削除
 
 ・chrome
-	-GUI
+	# GUI
 		sudo apt install gdebi
 		https://www.google.com/intl/ja_jp/chrome/ からダウンロード
 		.debファイルを右クリック
-	-CUI
+	# CUI
 		wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 		sudo apt install ./google-chrome-stable_current_amd64.deb
-	vimium 拡張
+	# vimium 拡張
 	
 ・discord
-	-install
-		snap install discord
-		snap remove discord
-	-画面共有
+	snap install discord
+	snap remove discord
+	# share screen
 		echo $XDG_SESSION_TYPE
 		# if wayland
 			sudo vim /etc/gdm3/custom.conf
@@ -90,6 +89,9 @@
 
 ・mendeley
 	# python2系をpyenvで用意
+	# root 環境がpython2系じゃないと起動しない
+		(root): pyenv grobal python2~
+		(work): pyenv local python3~
 	sudo apt install 2to3
 	https://github.com/JezaChen/MendeleyDesktop-For-Ubuntu-22.04/releases
 	https://packages.ubuntu.com/jammy/amd64/libldap-2.5-0/download
@@ -105,25 +107,17 @@
 	sudo dpkg -i gconf2_3.2.6-8_amd64.deb
 	sudo dpkg -i mendeleydesktop_1.19.8_for_ubuntu_22.04.deb
 	rm *.deb
-	# pyenv global 2
-	# pyenv local 3
 
-・jupyter
-	pip install jupyter
-	pip install jupyter_contrib_NbExtensions
-	jupyter contrib nbextension install --user
-	pip install jupyterthemes
-	jt -t chesterish -T -f roboto -fs 9 -tf merriserif -tfs 11 -nf ptsans -nfs 11 -dfs 8 -ofs 8
-	# ~/.jupyter/custom/custom.css
-	# div.cell.edit_mode { の直前に以下を挿入
-		/* Jupyter cell is in normal mode when code mirror */
-		.edit_mode .cell.selected .CodeMirror-focused.cm-fat-cursor {
-		 background-color: #000000 !important;
-		}
-		/* Jupyter cell is in insert mode when code mirror */
-		.edit_mode .cell.selected .CodeMirror-focused:not(.cm-fat-cursor) {
-		 background-color: #000000 !important;
-		}
+・jupyter lab
+	sudo apt install libsqlite3-dev libreadline-dev libbz2-dev libssl-dev libsqlite3-dev libncurses-dev libffi-dev libdb-dev libexpat1-dev zlib1g-dev liblzma-dev libgdbm-dev
+	pip install jupyterlab
+	pip install jupyterlab-vim
+	# jupyter lab が起動しない場合pythonを入れ直す
+	# setting Theme, Enable Vim Mode, vimium
+	# setting Setting Editor 
+		Notebook Vim で以下のチェックを外す
+			Enable `Esc` and `Ctrl-[` leaving vim Normal mode to Jupyter Command mode
+			Override `Shift-Esc` browser shortcut in Jupyter Command mode
 
 ・tex
 	# https://www.tug.org/texlive/
@@ -136,5 +130,5 @@
 	sudo /usr/local/texlive/????/bin/*/tlmgr path add
 	sudo tlmgr update --self --all
 	# package追加
-	kpsewhich bm.sty の場所に.styファイルを追加
-	sudo mktexlsr
+		kpsewhich bm.sty の場所に.styファイルを追加
+		sudo mktexlsr
