@@ -105,6 +105,8 @@
 	sudo dpkg -i gconf2_3.2.6-8_amd64.deb
 	sudo dpkg -i mendeleydesktop_1.19.8_for_ubuntu_22.04.deb
 	rm *.deb
+	# pyenv global 2
+	# pyenv local 3
 
 ・jupyter
 	pip install jupyter
